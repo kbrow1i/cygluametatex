@@ -1,0 +1,43 @@
+NAME="luametatex"
+VERSION=2.10.07
+RELEASE=1
+CATEGORY=""
+SUMMARY=""
+DESCRIPTION=""
+HOMEPAGE=""
+LICENSE=""
+
+GIT_URI="https://github.com/contextgarden/luametatex.git"
+GIT_BRANCH="main"
+
+inherit git cmake
+
+PATCH_URI="cygwin.patch"
+
+BUILD_REQUIRES="cmake ninja"
+
+src_install() {
+    cd ${B}
+    dobin luametatex.exe
+}
+
+SCALLYWAG=nobuild
+
+# This is LuaMetaTeX, Version 2.10.07
+
+# Execute 'luametatex --credits' for credits and version details.
+
+# There is NO warranty. Redistribution of this software is covered by the terms
+# of the GNU General Public License, version 2 or (at your option) any later
+# version. For more information about these matters, see the file named COPYING
+# and the LuaMetaTeX source.
+
+# Functionality : level 20230310
+# Support       : context@ntg.nl
+# Copyright     : The Lua(Meta)TeX Team(s) (2005-2023+)
+
+# The LuaMetaTeX project is related to ConTeXt development. This macro package
+# tightly integrates TeX and MetaPost in close cooperation with Lua. Updates will
+# happen in sync with ConTeXt and when needed. Don't be fooled by unchanged dates:
+# long term stability is the objective.
+
