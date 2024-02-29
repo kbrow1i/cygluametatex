@@ -1,5 +1,7 @@
+# Source repo is on github.
+
 NAME="luametatex"
-VERSION=2.10.10
+VERSION=2.11.02
 RELEASE=1
 CATEGORY=""
 SUMMARY=""
@@ -7,10 +9,14 @@ DESCRIPTION=""
 HOMEPAGE=""
 LICENSE=""
 
-GIT_URI="https://github.com/contextgarden/luametatex.git"
-GIT_BRANCH="main"
+# GIT_URI="https://github.com/contextgarden/luametatex.git"
+# GIT_BRANCH="main"
 
-inherit git cmake
+SRC_URI="https://www.pragma-ade.nl/context/latest/cont-tmf.zip"
+SRC_DIR=source/${NAME}
+
+# inherit git cmake
+inherit cmake
 
 # PATCH_URI="cygwin.patch"
 
