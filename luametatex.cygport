@@ -1,5 +1,5 @@
 NAME="luametatex"
-VERSION=2.10.10
+VERSION=2.11.05
 RELEASE=1
 CATEGORY=""
 SUMMARY=""
@@ -13,6 +13,7 @@ GIT_BRANCH="main"
 inherit git cmake
 
 # PATCH_URI="cygwin.patch"
+PATCH_URI="builtin_thread_pointer.patch"
 
 BUILD_REQUIRES="cmake ninja"
 
