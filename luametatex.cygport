@@ -1,5 +1,5 @@
 NAME="luametatex"
-VERSION=2.11.05
+VERSION=2.11.07
 RELEASE=1
 CATEGORY=""
 SUMMARY=""
@@ -7,18 +7,36 @@ DESCRIPTION=""
 HOMEPAGE=""
 LICENSE=""
 
-GIT_URI="https://github.com/contextgarden/luametatex.git"
-GIT_BRANCH="main"
+# GIT_URI="https://github.com/contextgarden/luametatex.git"
+# GIT_BRANCH="main"
+SRC_URI="https://www.pragma-ade.nl/context/latest/cont-tmf.zip"
+SRC_DIR="."
 
-inherit git cmake
+# inherit git cmake
+inherit cmake
 
 # PATCH_URI="cygwin.patch"
 PATCH_URI="builtin_thread_pointer.patch"
 
 BUILD_REQUIRES="cmake ninja"
 
+# CYGCMAKE_SOURCE="${S}/source/luametatex"
+
+src_compile() {
+        mkdir -p ${B}/source/luametatex
+        cd ${B}/source/luametatex
+        : ${CYGCMAKE_GENERATOR=Ninja}
+        cygcmake
+        if [ -f build.ninja ]
+        then
+                cygninja
+        else
+                cygmake
+        fi
+}
+
 src_install() {
-    cd ${B}
+    cd ${B}/source/luametatex
     dobin luametatex.exe
 }
 

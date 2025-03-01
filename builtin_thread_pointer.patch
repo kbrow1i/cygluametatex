@@ -1,5 +1,5 @@
---- origsrc/luametatex/source/libraries/mimalloc/include/mimalloc/prim.h	2025-02-11 12:41:15.000000000 -0500
-+++ src/luametatex/source/libraries/mimalloc/include/mimalloc/prim.h	2025-02-11 16:36:41.000468600 -0500
+--- origsrc/source/luametatex/source/libraries/mimalloc/include/mimalloc/prim.h	2025-02-26 16:04:15.000000000 -0500
++++ src/source/luametatex/source/libraries/mimalloc/include/mimalloc/prim.h	2025-02-27 18:10:44.128690400 -0500
 @@ -210,7 +210,8 @@ static inline void mi_prim_tls_slot_set(
  // For now, we only enable this for specific platforms.
  #if !defined(__APPLE__)  /* on apple (M1) the wrong register is read (tpidr_el0 instead of tpidrro_el0) so fall back to TLS slot assembly (<https://github.com/microsoft/mimalloc/issues/343#issuecomment-763272369>)*/ \
